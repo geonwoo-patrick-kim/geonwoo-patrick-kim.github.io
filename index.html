@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Geonwoo Kim</title>
+  <title>김건우 · Geonwoo Kim</title>
   <meta name="description" content="Geonwoo Kim — econometric theory">
   <meta name="theme-color" content="#ffffff">
   <style>
@@ -16,6 +16,7 @@
   --page: #ffffff;
   --measure: 1080px;
   --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-korean: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -48,7 +49,10 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-img { display: block; max-width: 100%; }
+img {
+  display: block;
+  max-width: 100%;
+}
 
 ::selection {
   background: var(--selection);
@@ -73,14 +77,11 @@ img { display: block; max-width: 100%; }
   width: 100%;
 }
 
-.hero-image picture,
 .hero-image img {
   width: 100%;
-}
-
-.hero-image img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
 }
 
 .hero-copy {
@@ -89,11 +90,30 @@ img { display: block; max-width: 100%; }
 }
 
 h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.10em 0.34em;
   margin: 0 0 7px;
   font-size: 29px;
-  line-height: 1.14;
+  line-height: 1.18;
   letter-spacing: -0.035em;
   font-weight: 400;
+}
+
+.name-korean {
+  font-family: var(--font-korean);
+  letter-spacing: -0.045em;
+}
+
+.name-divider {
+  color: var(--tertiary);
+  font-size: 0.70em;
+  line-height: 1;
+}
+
+.name-english {
+  font-family: var(--font);
 }
 
 .name-note {
@@ -119,8 +139,6 @@ h1 {
   font-weight: 400;
 }
 
-.intro + .intro { margin-top: 17px; }
-
 .profile-links {
   display: flex;
   flex-wrap: wrap;
@@ -129,7 +147,9 @@ h1 {
   font-size: 14.5px;
 }
 
-.profile-links a { white-space: nowrap; }
+.profile-links a {
+  white-space: nowrap;
+}
 
 .research {
   display: grid;
@@ -160,7 +180,9 @@ h1 {
   max-width: 720px;
 }
 
-.paper-group + .paper-group { margin-top: 55px; }
+.paper-group + .paper-group {
+  margin-top: 55px;
+}
 
 .group-heading {
   margin: 0 0 24px;
@@ -170,7 +192,9 @@ h1 {
   font-weight: 400;
 }
 
-.paper + .paper { margin-top: 30px; }
+.paper + .paper {
+  margin-top: 30px;
+}
 
 .paper-title {
   margin: 0;
@@ -188,7 +212,9 @@ h1 {
   line-height: 1.45;
 }
 
-.paper-authors { color: var(--secondary); }
+.paper-authors {
+  color: var(--secondary);
+}
 
 .paper-links {
   display: flex;
@@ -198,8 +224,15 @@ h1 {
   font-size: 13.5px;
 }
 
-.paper-links a::before { content: "["; color: var(--tertiary); }
-.paper-links a::after { content: "]"; color: var(--tertiary); }
+.paper-links a::before {
+  content: "[";
+  color: var(--tertiary);
+}
+
+.paper-links a::after {
+  content: "]";
+  color: var(--tertiary);
+}
 
 @media (max-width: 920px) {
   .page {
@@ -213,10 +246,13 @@ h1 {
   }
 
   h1 {
-  font-size: 27px;
-  margin-bottom: 7px;
+    font-size: 27px;
+    margin-bottom: 7px;
   }
-  .intro { font-size: 16.5px; }
+
+  .intro {
+    font-size: 16.5px;
+  }
 
   .research {
     grid-template-columns: 142px minmax(0, 1fr);
@@ -224,7 +260,9 @@ h1 {
     margin-top: 88px;
   }
 
-  .section-heading { font-size: 17px; }
+  .section-heading {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -239,8 +277,14 @@ h1 {
     align-items: start;
   }
 
-  .hero-image { width: min(82vw, 390px); }
-  .hero-copy { max-width: 100%; }
+  .hero-image {
+    width: min(82vw, 390px);
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
   h1 {
     font-size: 27px;
     margin-bottom: 7px;
@@ -249,7 +293,11 @@ h1 {
   .name-note {
     margin-bottom: 22px;
   }
-  .intro { font-size: 17px; line-height: 1.54; }
+
+  .intro {
+    font-size: 17px;
+    line-height: 1.54;
+  }
 
   .research {
     grid-template-columns: 1fr;
@@ -257,8 +305,13 @@ h1 {
     margin-top: 71px;
   }
 
-  .section-heading { font-size: 18px; }
-  .paper-group + .paper-group { margin-top: 47px; }
+  .section-heading {
+    font-size: 18px;
+  }
+
+  .paper-group + .paper-group {
+    margin-top: 47px;
+  }
 }
   </style>
 </head>
@@ -268,18 +321,21 @@ h1 {
       <figure class="hero-image">
         <img
           src="assets/img/profile.jpg"
+          alt=""
         >
       </figure>
 
       <div class="hero-copy">
-        <h1 id="name">Geonwoo Kim</h1>
+        <h1 id="name">
+          <span class="name-korean" lang="ko">김건우</span>
+          <span class="name-divider" aria-hidden="true">·</span>
+          <span class="name-english">Geonwoo Kim</span>
+        </h1>
 
         <p class="name-note">
-          <span lang="ko">김건우</span>
+          pronounced “guh-noo”
           <span class="divider" aria-hidden="true">·</span>
-            pronounced “guhn-woo”
-          <span class="divider" aria-hidden="true">·</span>
-            I go by Patrick
+          Patrick
         </p>
 
         <p class="intro">
@@ -296,7 +352,9 @@ h1 {
     </section>
 
     <section class="research" aria-labelledby="research-heading">
-      <h2 class="section-heading" id="research-heading"><span aria-hidden="true">•</span> Research</h2>
+      <h2 class="section-heading" id="research-heading">
+        <span aria-hidden="true">•</span> Research
+      </h2>
 
       <div class="research-body">
         <section class="paper-group" aria-labelledby="working-papers-heading">

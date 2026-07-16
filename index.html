@@ -6,52 +6,224 @@
   <meta name="color-scheme" content="light">
   <title>Geonwoo Kim</title>
   <meta name="description" content="Geonwoo Kim is a Research Professional at the University of Chicago working on econometric theory, high-dimensional inference, measurement error, and economic measurement with AI.">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="icon" href="favicon.ico?v=4" sizes="any">
+
+  <style>
+    :root {
+      --ink: #171717;
+      --secondary: #5d5d5d;
+      --tertiary: #8a8a8a;
+      --line: #dedede;
+      --page: #ffffff;
+      --link: #254f85;
+      --measure: 1040px;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--page);
+      color: var(--ink);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.48;
+      letter-spacing: -0.012em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    ::selection {
+      color: #fff;
+      background: #294f83;
+    }
+
+    .site {
+      width: min(var(--measure), calc(100vw - 64px));
+      margin-inline: auto;
+      padding: 96px 0 118px;
+    }
+
+    .introduction {
+      max-width: 825px;
+    }
+
+    .identity {
+      margin: 0 0 34px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 500;
+    }
+
+    .preferred-name {
+      margin: 7px 0 0;
+      color: var(--tertiary);
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    .biography {
+      max-width: 790px;
+      font-size: 17px;
+      line-height: 1.58;
+      letter-spacing: -0.018em;
+    }
+
+    .biography p { margin: 0; }
+    .biography p + p { margin-top: 16px; }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 21px;
+      margin-top: 29px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .profile-links a { white-space: nowrap; }
+
+    .research {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 68px;
+      margin-top: 104px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.2;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .research-content {
+      max-width: 690px;
+    }
+
+    .research-group + .research-group {
+      margin-top: 55px;
+    }
+
+    .research-group h3 {
+      margin: 0 0 27px;
+      color: var(--secondary);
+      font-size: 15px;
+      line-height: 1.3;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .paper + .paper { margin-top: 33px; }
+
+    .paper h4 {
+      max-width: 680px;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.42;
+      letter-spacing: -0.023em;
+      font-weight: 500;
+    }
+
+    .coauthors,
+    .paper-note {
+      margin: 5px 0 0;
+      font-size: 14px;
+      line-height: 1.47;
+    }
+
+    .coauthors { color: var(--secondary); }
+    .paper-note { color: var(--tertiary); }
+
+    @media (max-width: 760px) {
+      .site {
+        width: min(100% - 38px, var(--measure));
+        padding: 55px 0 76px;
+      }
+
+      .identity { margin-bottom: 28px; }
+      h1 { font-size: 29px; }
+
+      .biography {
+        font-size: 16px;
+        line-height: 1.58;
+      }
+
+      .research {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 33px;
+        margin-top: 76px;
+        padding-top: 29px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="site" id="top">
+  <main class="site">
     <section class="introduction" aria-labelledby="name">
-      <figure class="portrait" data-portrait>
-        <img src="assets/portrait.jpg" alt="Portrait of Geonwoo Kim" data-portrait-image>
-      </figure>
+      <header class="identity">
+        <h1 id="name">Geonwoo Kim</h1>
+        <p class="preferred-name">I go by Patrick.</p>
+      </header>
 
-      <div class="introduction-copy">
-        <header class="identity">
-          <h1 id="name">Geonwoo Kim</h1>
-          <p class="preferred-name">I go by Patrick.</p>
-        </header>
-
-        <div class="biography">
-          <p>
-            I am a Research Professional at the
-            <a href="https://bfi.uchicago.edu/people/geonwoo-kim/">Becker Friedman Institute</a>
-            at the University of Chicago, where I work on econometric theory with
-            Azeem Shaikh and collaborators.
-          </p>
-          <p>
-            My research asks how we can learn from data when the variables we care
-            about are high-dimensional, imperfectly measured, or produced by algorithms.
-            I am especially interested in measurement error, computational econometrics,
-            and economic measurement with AI.
-          </p>
-          <p>
-            I received a B.A. in Mathematics with Honors from Grinnell College.
-          </p>
-        </div>
-
-        <nav class="profile-links" aria-label="Profile links">
-          <a href="Geonwoo_Kim_CV.pdf">CV</a>
-          <a href="https://scholar.google.com/citations?user=D4guqJoAAAAJ&hl=en">Google Scholar</a>
-          <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
-          <a href="https://github.com/geonwoo-patrick-kim">GitHub</a>
-        </nav>
+      <div class="biography">
+        <p>
+          I am a Research Professional at the
+          <a href="https://bfi.uchicago.edu/people/geonwoo-kim/">Becker Friedman Institute</a>
+          at the University of Chicago, where I work on econometric theory with
+          Azeem Shaikh and collaborators.
+        </p>
+        <p>
+          My research asks how we can learn from data when the variables we care
+          about are high-dimensional, imperfectly measured, or produced by algorithms.
+          I am especially interested in measurement error, computational econometrics,
+          and economic measurement with AI.
+        </p>
+        <p>
+          I received a B.A. in Mathematics with Honors from Grinnell College.
+        </p>
       </div>
+
+      <nav class="profile-links" aria-label="Profile links">
+        <a href="Geonwoo_Kim_CV.pdf">CV</a>
+        <a href="https://scholar.google.com/citations?user=D4guqJoAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
+        <a href="https://github.com/geonwoo-patrick-kim">GitHub</a>
+      </nav>
     </section>
 
     <section class="research" aria-labelledby="research-title">
       <header class="section-heading">
-        <span class="section-marker" aria-hidden="true"></span>
         <h2 id="research-title">Research</h2>
       </header>
 
@@ -83,7 +255,5 @@
       </div>
     </section>
   </main>
-
-  <script src="assets/js/site.js"></script>
 </body>
 </html>

@@ -89,11 +89,25 @@ img { display: block; max-width: 100%; }
 }
 
 h1 {
-  margin: 0 0 26px;
+  margin: 0 0 7px;
   font-size: 29px;
   line-height: 1.14;
   letter-spacing: -0.035em;
   font-weight: 400;
+}
+
+.name-note {
+  margin: 0 0 24px;
+  color: var(--secondary);
+  font-size: 12.5px;
+  line-height: 1.45;
+  letter-spacing: 0.005em;
+  font-weight: 400;
+}
+
+.name-note .divider {
+  padding: 0 6px;
+  color: var(--tertiary);
 }
 
 .intro {
@@ -198,7 +212,10 @@ h1 {
     gap: 44px;
   }
 
-  h1 { font-size: 27px; margin-bottom: 22px; }
+  h1 {
+  font-size: 27px;
+  margin-bottom: 7px;
+  }
   .intro { font-size: 16.5px; }
 
   .research {
@@ -224,7 +241,14 @@ h1 {
 
   .hero-image { width: min(82vw, 390px); }
   .hero-copy { max-width: 100%; }
-  h1 { font-size: 27px; margin-bottom: 20px; }
+  h1 {
+    font-size: 27px;
+    margin-bottom: 7px;
+  }
+
+  .name-note {
+    margin-bottom: 22px;
+  }
   .intro { font-size: 17px; line-height: 1.54; }
 
   .research {
@@ -248,10 +272,18 @@ h1 {
       </figure>
 
       <div class="hero-copy">
-        <h1 id="name">Geonwoo Kim 김건우</h1>
+        <h1 id="name">Geonwoo Kim</h1>
+
+        <p class="name-note">
+          <span lang="ko">김건우</span>
+          <span class="divider" aria-hidden="true">·</span>
+            pronounced “guhn-woo”
+          <span class="divider" aria-hidden="true">·</span>
+            I go by Patrick
+        </p>
 
         <p class="intro">
-          I am an econometrician interested in how we can learn from noisy, high-dimensional, and algorithmically generated data, and how we can conduct valid statistical inference in such settings. Currently, I am a Research Professional in Econometric Theory at the University of Chicago working with Azeem Shaikh and Kirill Ponomarev. I received a B.A. in Mathematics with Honors from Grinnell College, where I was advised by Jeffrey Blanchard. I go by Patrick.
+          I am an econometrician interested in how we can learn from noisy, high-dimensional, and algorithmically generated data, and how we can conduct valid statistical inference in such settings. Currently, I am a Research Professional in Econometric Theory at the University of Chicago working with Azeem Shaikh and Kirill Ponomarev. I received a B.A. in Mathematics with Honors and a Concentration in Statistics from Grinnell College, where I was advised by Jeffrey Blanchard.
         </p>
 
         <nav class="profile-links" aria-label="Profile links">

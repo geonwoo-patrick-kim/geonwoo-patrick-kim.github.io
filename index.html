@@ -69,8 +69,8 @@
     }
 
     .hero-image {
-      width: 664px;
-      max-width: 74.1%;
+      width: 330px;
+      max-width: 38%;
       margin: 0 auto 34px;
     }
 
@@ -78,8 +78,6 @@
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 1.515 / 1;
-      object-fit: cover;
     }
 
     .identity {
@@ -298,6 +296,41 @@
         font-size: 15.1px;
       }
     }
+  
+    .note + .note {
+      margin-top: 25px;
+    }
+
+    .note-title {
+      margin: 0;
+      font-size: 15.7px;
+      line-height: 1.47;
+      font-weight: 400;
+      letter-spacing: 0.003em;
+    }
+
+    .note-meta {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.43;
+      font-weight: 400;
+    }
+
+    .note-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin: 5px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .note-links a {
+      color: var(--blue);
+    }
+
   </style>
 </head>
 
@@ -393,7 +426,21 @@
         </button>
 
         <div class="accordion-panel" id="notes-panel">
-          <p class="notes-empty">Research and expository notes will appear here.</p>
+          <article class="note">
+            <p class="note-title">A Geometric View of Regularization in High-Dimensional Moment Models</p>
+            <p class="note-meta">Sample note · Research note</p>
+            <p class="note-links">
+              <a href="notes/regularization-geometry-sample.pdf">[PDF]</a>
+            </p>
+          </article>
+
+          <article class="note">
+            <p class="note-title">Measurement Error and Orthogonality: A Short Note</p>
+            <p class="note-meta">Sample note · Expository note</p>
+            <p class="note-links">
+              <a href="notes/measurement-error-orthogonality-sample.pdf">[PDF]</a>
+            </p>
+          </article>
         </div>
       </div>
     </section>

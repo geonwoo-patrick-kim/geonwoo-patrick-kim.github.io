@@ -5,373 +5,410 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <title>Geonwoo Kim</title>
-  <meta name="description" content="Geonwoo Kim — econometric theory, high-dimensional inference, measurement error, computational econometrics, and economic measurement with AI.">
-  <link rel="icon" href="favicon.ico?v=7" sizes="any">
+  <meta name="description" content="Geonwoo Kim — econometrics, high-dimensional inference, measurement error, computational econometrics, and economic measurement with AI.">
+  <link rel="icon" href="favicon.ico?v=9" sizes="any">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap');
+
     :root {
-      --ink: #1b1b1b;
-      --secondary: #666666;
-      --quiet: #888888;
-      --blue: #3154c7;
-      --page: #ffffff;
-      --max: 1280px;
-      --sans: "Helvetica Neue", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif;
+      --ink: #111111;
+      --muted: #6b6b6b;
+      --quiet: #8b8b8b;
+      --rule: #9a9a9a;
+      --blue: #4037ff;
+      --white: #ffffff;
+      --page-width: 896px;
+
+      /*
+        Jost is a geometric sans derived from the same modernist tradition as Futura.
+        Loading it explicitly avoids the heavy macOS Futura Medium rendering.
+      */
+      --sans: "Jost", "Futura PT", Futura, "Century Gothic", sans-serif;
+      --korean: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    h1, h2, h3, h4, h5, h6,
-    strong, b,
-    .name,
-    .hangul,
-    .research-label,
-    .group-title,
-    .paper-title {
-      font-weight: 400;
-    }
-
-    html {
-      background: var(--page);
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--white);
       color: var(--ink);
-      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      margin: 0;
-      background: var(--page);
-      color: var(--ink);
       font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: -0.014em;
+      font-size: 15.7px;
+      line-height: 1.48;
+      font-weight: 400;
+      letter-spacing: 0.005em;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
     a {
-      color: var(--blue);
+      color: inherit;
       text-decoration: none;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
     }
 
     a:hover,
     a:focus-visible {
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
 
-    img {
+    .site {
+      width: min(var(--page-width), calc(100vw - 48px));
+      margin: 0 auto;
+      padding: 78px 0 68px;
+    }
+
+    .hero-image {
+      width: 664px;
+      max-width: 74.1%;
+      margin: 0 auto 34px;
+    }
+
+    .hero-image img {
       display: block;
-      max-width: 100%;
-    }
-
-    ::selection {
-      color: #ffffff;
-      background: var(--blue);
-    }
-
-    .page {
-      width: min(var(--max), calc(100vw - 84px));
-      margin-inline: auto;
-      padding: 41px 0 88px;
-    }
-
-    .intro {
-      display: grid;
-      grid-template-columns: 378px minmax(0, 1fr);
-      gap: 74px;
-      align-items: start;
-    }
-
-    .portrait {
-      margin: 0;
-      width: 378px;
-    }
-
-    .portrait img {
-      width: 378px;
-      height: 378px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1.515 / 1;
       object-fit: cover;
-      background: #eeeeec;
     }
 
-    .intro-copy {
-      max-width: 655px;
-      padding-top: 50px;
+    .identity {
+      width: 100%;
+      margin: 0;
     }
 
     .name {
-      margin: 0 0 26px;
-      font-size: 30px;
-      line-height: 1.12;
-      letter-spacing: -0.043em;
-      font-weight: 400;
+      margin: 0 0 12px;
+      font-family: var(--sans);
+      font-size: 15.7px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
     }
 
-    .hangul {
-      margin-left: 7px;
-      font-family: "Apple SD Gothic Neo", "Noto Sans KR", var(--sans);
-      font-size: 1.04em;
-      font-weight: 400;
-      letter-spacing: -0.035em;
+    .name .hangul {
+      margin-left: 5px;
+      font-family: var(--korean);
+      font-size: 1.08em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      vertical-align: 0.01em;
     }
 
-    .name-details {
-      margin: -15px 0 25px;
+    .name-meta {
+      margin: -3px 0 17px;
       color: var(--quiet);
-      font-size: 13px;
-      line-height: 1.4;
-      letter-spacing: 0;
+      font-size: 13.4px;
+      line-height: 1.38;
       font-weight: 400;
+      letter-spacing: 0;
     }
 
     .bio {
+      width: 100%;
       margin: 0;
-      max-width: 650px;
-      font-size: 17px;
-      line-height: 1.58;
-      letter-spacing: -0.018em;
+      font-size: 15.7px;
+      line-height: 1.5;
+      font-weight: 400;
+      letter-spacing: 0.004em;
+    }
+
+    .bio p {
+      margin: 0;
+    }
+
+    .bio p + p {
+      margin-top: 14px;
     }
 
     .profile-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 20px;
-      margin-top: 25px;
-      font-size: 14px;
+      gap: 16px;
+      margin: 17px 0 31px;
+      font-size: 14.6px;
       line-height: 1.4;
-    }
-
-    .profile-links a {
-      white-space: nowrap;
-    }
-
-    .research {
-      display: grid;
-      grid-template-columns: 160px minmax(0, 1fr);
-      gap: 60px;
-      margin-top: 108px;
-    }
-
-    .research-label {
-      position: relative;
-      margin: 3px 0 0;
-      padding-left: 20px;
-      font-size: 17px;
-      line-height: 1.25;
-      letter-spacing: 0.015em;
-      text-transform: uppercase;
       font-weight: 400;
     }
 
-    .research-label::before {
+    .profile-links a,
+    .paper-links a {
+      color: var(--blue);
+    }
+
+    .accordion {
+      width: 100%;
+      border-top: 1px solid var(--rule);
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .accordion-button {
+      appearance: none;
+      width: 100%;
+      margin: 0;
+      padding: 14px 0 13px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--sans);
+      font-weight: 400;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .accordion-title {
+      font-size: 15.7px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .plus {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      flex: 0 0 15px;
+    }
+
+    .plus::before,
+    .plus::after {
       content: "";
       position: absolute;
-      left: 1px;
-      top: 0.58em;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
       background: var(--blue);
     }
 
-    .research-content {
-      max-width: 760px;
+    .plus::before {
+      left: 1px;
+      right: 1px;
+      top: 7px;
+      height: 1px;
+    }
+
+    .plus::after {
+      top: 1px;
+      bottom: 1px;
+      left: 7px;
+      width: 1px;
+      transition: opacity 120ms ease;
+    }
+
+    .accordion-button[aria-expanded="true"] .plus::after {
+      opacity: 0;
+    }
+
+    .accordion-panel {
+      display: none;
+      padding: 12px 0 31px;
+    }
+
+    .accordion-panel.open {
+      display: block;
     }
 
     .research-group + .research-group {
-      margin-top: 58px;
+      margin-top: 38px;
     }
 
     .group-title {
-      margin: 0 0 26px;
-      font-size: 16px;
-      line-height: 1.3;
-      letter-spacing: -0.018em;
+      margin: 0 0 21px;
+      font-size: 15.7px;
+      line-height: 1.35;
       font-weight: 400;
+      letter-spacing: 0.004em;
     }
 
     .paper + .paper {
-      margin-top: 34px;
+      margin-top: 27px;
     }
 
     .paper-title {
       margin: 0;
-      max-width: 760px;
-      font-size: 16px;
+      font-size: 15.7px;
+      line-height: 1.47;
+      font-weight: 400;
+      letter-spacing: 0.003em;
+    }
+
+    .paper-authors,
+    .paper-status {
+      margin: 3px 0 0;
+      font-size: 14.6px;
       line-height: 1.43;
-      letter-spacing: -0.019em;
       font-weight: 400;
     }
 
     .paper-authors {
-      margin: 5px 0 0;
-      color: var(--secondary);
-      font-size: 14px;
-      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    .paper-status {
+      color: var(--muted);
     }
 
     .paper-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 6px 0 0;
-      font-size: 13px;
+      gap: 11px;
+      margin: 5px 0 0;
+      font-size: 15.7px;
       line-height: 1.4;
+      font-weight: 400;
     }
 
-    @media (max-width: 900px) {
-      .page {
-        width: min(100% - 40px, var(--max));
-        padding-top: 36px;
-      }
-
-      .intro {
-        grid-template-columns: 310px minmax(0, 1fr);
-        gap: 48px;
-      }
-
-      .portrait,
-      .portrait img {
-        width: 310px;
-        height: 310px;
-      }
-
-      .intro-copy {
-        padding-top: 25px;
-      }
+    .notes-empty {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.1px;
+      line-height: 1.5;
+      font-weight: 400;
     }
 
     @media (max-width: 700px) {
-      .page {
-        width: min(100% - 34px, var(--max));
-        padding: 27px 0 62px;
+      .site {
+        width: calc(100vw - 34px);
+        padding: 34px 0 54px;
       }
 
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 31px;
-      }
-
-      .portrait {
-        width: min(82vw, 350px);
-      }
-
-      .portrait img {
+      .hero-image {
         width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-      }
-
-      .intro-copy {
-        max-width: 100%;
-        padding-top: 0;
-      }
-
-      .name {
-        margin-bottom: 21px;
-        font-size: 28px;
+        max-width: none;
+        margin-bottom: 27px;
       }
 
       .bio {
-        font-size: 16px;
-        line-height: 1.58;
-      }
-
-      .research {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 73px;
-      }
-
-      .research-label {
-        padding-left: 17px;
+        font-size: 15.1px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="intro" aria-labelledby="name">
-      <figure class="portrait">
-        <img src="portrait.jpg" alt="Portrait placeholder for Geonwoo Kim">
-      </figure>
+  <main class="site">
+    <figure class="hero-image">
+      <img src="portrait.jpg" alt="Portrait placeholder for Geonwoo Kim">
+    </figure>
 
-      <div class="intro-copy">
-        <h1 class="name" id="name">
-          Geonwoo Kim <span class="hangul" lang="ko">김건우</span>
-        </h1>
-        <p class="name-details">Pronounced “guh-noo” · Preferred name: Patrick</p>
+    <section class="identity" aria-labelledby="name">
+      <h1 class="name" id="name">Geonwoo Kim <span class="hangul" lang="ko">김건우</span></h1>
+      <p class="name-meta">Pronounced “guhn-woo” · Preferred name: Patrick</p>
 
-        <p class="bio">
-          I am an econometrician interested in how we can learn from 
-          noisy, high-dimensional, and algorithmically generated
-          data, and how we can conduct valid statistical inference under such settings.
-          Currently, I am a Research Professional in Econometric Theory at the
-          University of Chicago working with Azeem Shaikh and Kirill Ponomarev.
-          I received a B.A. in Mathematics with Honors from Grinnell College,
-          where I was advised by Jeffrey Blanchard.
+      <div class="bio">
+        <p>
+          I am an econometrician interested in how we can learn from and conduct valid inference
+          with noisy, high-dimensional, and algorithmically generated data. Currently, I am a
+          Research Professional in Econometric Theory at the University of Chicago working with
+          Azeem Shaikh and Kirill Ponomarev. I received a B.A. in Mathematics with Honors from
+          Grinnell College, where I was advised by Jeffrey Blanchard.
         </p>
-
-        <nav class="profile-links" aria-label="Profile links">
-          <a href="Geonwoo_Kim_CV.pdf">CV</a>
-          <a href="https://scholar.google.com/scholar?q=%22Geonwoo+Kim%22+econometrics">Google Scholar</a>
-          <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
-          <a href="https://github.com/killrjsdn">GitHub</a>
-        </nav>
       </div>
+
+      <nav class="profile-links" aria-label="Profile links">
+        <a href="Geonwoo_Kim_CV.pdf">CV</a>
+        <a href="https://scholar.google.com/scholar?q=%22Geonwoo+Kim%22+econometrics">Google Scholar</a>
+        <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
+        <a href="https://github.com/killrjsdn">GitHub</a>
+      </nav>
     </section>
 
-    <section class="research" aria-labelledby="research-title">
-      <h2 class="research-label" id="research-title">Research</h2>
+    <section class="accordion" aria-label="Sections">
+      <div class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false" aria-controls="research-panel">
+          <span class="accordion-title">Research</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
 
-      <div class="research-content">
-        <section class="research-group" aria-labelledby="working-papers-title">
-          <h3 class="group-title" id="working-papers-title">Working Papers</h3>
+        <div class="accordion-panel" id="research-panel">
+          <section class="research-group">
+            <h2 class="group-title">Working Papers</h2>
 
-          <article class="paper">
-            <h4 class="paper-title">
-              Signal Space Conjugate Gradient Iterative Hard Thresholding
-            </h4>
-            <p class="paper-authors">with Kate Bartz and Jeffrey Blanchard</p>
-            <p class="paper-links">
-              <a href="papers/sscgiht.pdf">[Paper]</a>
-              <a href="https://github.com/killrjsdn">[Code]</a>
-            </p>
-          </article>
+            <article class="paper">
+              <p class="paper-title">Denoised Partial Correlation for Conditional Independence Tests under Noisy Confounders</p>
+              <p class="paper-authors">with Suyong Song and Jonathan Wells</p>
+              <p class="paper-status">Under revision.</p>
+              <p class="paper-links">
+                <a href="papers/denoised-partial-correlation.pdf">[Paper]</a>
+                <a href="replication/denoised-partial-correlation-replication.zip">[Replication]</a>
+              </p>
+            </article>
 
-          <article class="paper">
-            <h4 class="paper-title">
-              Double/Debiased CoCoLasso of Treatment Effects with Mismeasured
-              High-Dimensional Control Variables
-            </h4>
-            <p class="paper-authors">with Suyong Song</p>
-            <p class="paper-links">
-              <a href="papers/highdim-me.pdf">[Paper]</a>
-              <a href="https://github.com/killrjsdn">[Code]</a>
-            </p>
-          </article>
-        </section>
+            <article class="paper">
+              <p class="paper-title">Inference for Treatment Effects with Mismeasured High-Dimensional Controls</p>
+              <p class="paper-authors">with Suyong Song</p>
+              <p class="paper-status">Presented at Midwest Econometrics Group 2024; under revision.</p>
+              <p class="paper-links">
+                <a href="papers/highdim-me.pdf">[Paper]</a>
+                <a href="replication/highdim-me-replication.zip">[Replication]</a>
+              </p>
+            </article>
 
-        <section class="research-group" aria-labelledby="progress-title">
-          <h3 class="group-title" id="progress-title">Research in Progress</h3>
+            <article class="paper">
+              <p class="paper-title">Signal Space Conjugate Gradient Iterative Hard Thresholding</p>
+              <p class="paper-authors">with Kate Bartz and Jeffrey Blanchard</p>
+              <p class="paper-status">Under review.</p>
+              <p class="paper-links">
+                <a href="papers/sscgiht.pdf">[Paper]</a>
+                <a href="replication/sscgiht-replication.zip">[Replication]</a>
+              </p>
+            </article>
+          </section>
 
-          <article class="paper">
-            <h4 class="paper-title">
-              Simultaneous Inference for AI-Generated Measurements:
-              Selection-Aware Inference for LLM-Labeled Economic Data
-            </h4>
-            <p class="paper-links">
-              <a href="papers/ai-measurement.pdf">[Draft]</a>
-            </p>
-          </article>
-        </section>
+          <section class="research-group">
+            <h2 class="group-title">Research in Progress</h2>
+
+            <article class="paper">
+              <p class="paper-title">Inference After AI Measurement</p>
+              <p class="paper-status">Work in progress.</p>
+              <p class="paper-links">
+                <a href="papers/ai-measurement.pdf">[Draft]</a>
+                <a href="replication/ai-measurement-replication.zip">[Replication]</a>
+              </p>
+            </article>
+          </section>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button" type="button" aria-expanded="false" aria-controls="notes-panel">
+          <span class="accordion-title">Notes</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+
+        <div class="accordion-panel" id="notes-panel">
+          <p class="notes-empty">Research and expository notes will appear here.</p>
+        </div>
       </div>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll('.accordion-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        const open = button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute('aria-expanded', String(!open));
+        panel.classList.toggle('open', !open);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -68,18 +68,6 @@
       padding: 78px 0 68px;
     }
 
-    .hero-image {
-      width: 330px;
-      max-width: 38%;
-      margin: 0 auto 34px;
-    }
-
-    .hero-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
     .identity {
       width: 100%;
       margin: 0;
@@ -280,16 +268,56 @@
       font-weight: 400;
     }
 
+
+    .intro-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      column-gap: 44px;
+      align-items: start;
+      margin: 0 0 31px;
+    }
+
+    .portrait-side {
+      width: 248px;
+      margin: 0;
+    }
+
+    .portrait-side img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .intro-grid .identity {
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .intro-grid .profile-links {
+      margin-bottom: 0;
+    }
+
     @media (max-width: 700px) {
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+        margin-bottom: 29px;
+      }
+
+      .portrait-side {
+        width: min(58vw, 235px);
+        margin: 0 auto;
+      }
+
+      .intro-grid .identity {
+        padding-top: 0;
+      }
+
       .site {
         width: calc(100vw - 34px);
         padding: 34px 0 54px;
-      }
-
-      .hero-image {
-        width: 100%;
-        max-width: none;
-        margin-bottom: 27px;
       }
 
       .bio {
@@ -336,30 +364,32 @@
 
 <body>
   <main class="site">
-    <figure class="hero-image">
-      <img src="portrait.jpg" alt="Portrait placeholder for Geonwoo Kim">
-    </figure>
+    <section class="intro-grid" aria-labelledby="name">
+      <figure class="portrait-side">
+        <img src="portrait.jpg" alt="Portrait of Geonwoo Kim">
+      </figure>
 
-    <section class="identity" aria-labelledby="name">
-      <h1 class="name" id="name">Geonwoo Kim <span class="hangul" lang="ko">김건우</span></h1>
-      <p class="name-meta">Pronounced “guhn-woo” · Preferred name: Patrick</p>
+      <div class="identity">
+        <h1 class="name" id="name">Geonwoo Kim <span class="hangul" lang="ko">김건우</span></h1>
+        <p class="name-meta">Pronounced “guhn-woo” · Preferred name: Patrick</p>
 
-      <div class="bio">
-        <p>
-          I am an econometrician interested in how we can learn from and conduct valid inference
-          with noisy, high-dimensional, and algorithmically generated data. Currently, I am a
-          Research Professional in Econometric Theory at the University of Chicago working with
-          Azeem Shaikh. I received a B.A. in Mathematics with Honors from Grinnell College,
-          where I was advised by Jeffrey Blanchard.
-        </p>
+        <div class="bio">
+          <p>
+            I am an econometrician interested in how we can learn from and conduct valid inference
+            with noisy, high-dimensional, and algorithmically generated data. Currently, I am a
+            Research Professional in Econometric Theory at the University of Chicago working with
+            Azeem Shaikh and Kirill Ponomarev. I received a B.A. in Mathematics with Honors from
+            Grinnell College, where I was advised by Jeffrey Blanchard.
+          </p>
+        </div>
+
+        <nav class="profile-links" aria-label="Profile links">
+          <a href="Geonwoo_Kim_CV.pdf">CV</a>
+          <a href="https://scholar.google.com/scholar?q=%22Geonwoo+Kim%22+econometrics">Google Scholar</a>
+          <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
+          <a href="https://github.com/killrjsdn">GitHub</a>
+        </nav>
       </div>
-
-      <nav class="profile-links" aria-label="Profile links">
-        <a href="Geonwoo_Kim_CV.pdf">CV</a>
-        <a href="https://scholar.google.com/scholar?q=%22Geonwoo+Kim%22+econometrics">Google Scholar</a>
-        <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
-        <a href="https://github.com/killrjsdn">GitHub</a>
-      </nav>
     </section>
 
     <section class="accordion" aria-label="Sections">

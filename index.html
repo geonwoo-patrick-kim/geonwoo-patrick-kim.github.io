@@ -6,367 +6,14 @@
   <meta name="color-scheme" content="light">
   <title>Geonwoo Kim</title>
   <meta name="description" content="Geonwoo Kim — econometrics, high-dimensional inference, measurement error, computational econometrics, and economic measurement with AI.">
-  <link rel="icon" href="favicon.ico?v=9" sizes="any">
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap');
-
-    :root {
-      --ink: #111111;
-      --muted: #6b6b6b;
-      --quiet: #8b8b8b;
-      --rule: #9a9a9a;
-      --blue: #4037ff;
-      --white: #ffffff;
-      --page-width: 896px;
-
-      /*
-        Jost is a geometric sans derived from the same modernist tradition as Futura.
-        Loading it explicitly avoids the heavy macOS Futura Medium rendering.
-      */
-      --sans: "Jost", "Futura PT", Futura, "Century Gothic", sans-serif;
-      --korean: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      min-height: 100%;
-      background: var(--white);
-      color: var(--ink);
-    }
-
-    body {
-      font-family: var(--sans);
-      font-size: 16.5px;
-      line-height: 1.48;
-      font-weight: 400;
-      letter-spacing: 0.005em;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover,
-    a:focus-visible {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
-    }
-
-    .site {
-      width: min(var(--page-width), calc(100vw - 48px));
-      margin: 0 auto;
-      padding: 78px 0 68px;
-    }
-
-    .identity {
-      width: 100%;
-      margin: 0;
-    }
-
-    .name {
-      margin: 0 0 12px;
-      font-family: var(--sans);
-      font-size: 16.5px;
-      line-height: 1.2;
-      font-weight: 600;
-      letter-spacing: 0.055em;
-      text-transform: uppercase;
-    }
-
-    .name .hangul {
-      margin-left: 5px;
-      font-family: var(--korean);
-      font-size: 1.08em;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      text-transform: none;
-      vertical-align: 0.01em;
-    }
-
-    .name-meta {
-      margin: -3px 0 17px;
-      color: var(--quiet);
-      font-size: 14.1px;
-      line-height: 1.38;
-      font-weight: 400;
-      letter-spacing: 0;
-    }
-
-    .bio {
-      width: 100%;
-      margin: 0;
-      font-size: 16.5px;
-      line-height: 1.5;
-      font-weight: 400;
-      letter-spacing: 0.004em;
-    }
-
-    .bio p {
-      margin: 0;
-    }
-
-    .bio p + p {
-      margin-top: 14px;
-    }
-
-    .profile-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 17px 0 31px;
-      font-size: 15.3px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    .profile-links a,
-    .paper-links a {
-      color: var(--blue);
-    }
-
-    .accordion {
-      width: 100%;
-      border-top: 1px solid var(--rule);
-    }
-
-    .accordion-item {
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .accordion-button {
-      appearance: none;
-      width: 100%;
-      margin: 0;
-      padding: 14px 0 13px;
-      border: 0;
-      background: transparent;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--sans);
-      font-weight: 400;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .accordion-title {
-      font-size: 16.5px;
-      line-height: 1.2;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .plus {
-      position: relative;
-      width: 15px;
-      height: 15px;
-      flex: 0 0 15px;
-    }
-
-    .plus::before,
-    .plus::after {
-      content: "";
-      position: absolute;
-      background: var(--blue);
-    }
-
-    .plus::before {
-      left: 1px;
-      right: 1px;
-      top: 7px;
-      height: 1px;
-    }
-
-    .plus::after {
-      top: 1px;
-      bottom: 1px;
-      left: 7px;
-      width: 1px;
-      transition: opacity 120ms ease;
-    }
-
-    .accordion-button[aria-expanded="true"] .plus::after {
-      opacity: 0;
-    }
-
-    .accordion-panel {
-      display: none;
-      padding: 12px 0 31px;
-    }
-
-    .accordion-panel.open {
-      display: block;
-    }
-
-    .research-group + .research-group {
-      margin-top: 38px;
-    }
-
-    .group-title {
-      margin: 0 0 21px;
-      font-size: 16.5px;
-      line-height: 1.35;
-      font-weight: 400;
-      letter-spacing: 0.004em;
-    }
-
-    .paper + .paper {
-      margin-top: 27px;
-    }
-
-    .paper-title {
-      margin: 0;
-      font-size: 16.5px;
-      line-height: 1.47;
-      font-weight: 400;
-      letter-spacing: 0.003em;
-    }
-
-    .paper-authors,
-    .paper-status {
-      margin: 3px 0 0;
-      font-size: 15.3px;
-      line-height: 1.43;
-      font-weight: 400;
-    }
-
-    .paper-authors {
-      color: var(--muted);
-    }
-
-    .paper-status {
-      color: var(--muted);
-    }
-
-    .paper-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
-      margin: 5px 0 0;
-      font-size: 16.5px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    .notes-empty {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15.9px;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-
-    .intro-grid {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 248px minmax(0, 1fr);
-      column-gap: 44px;
-      align-items: start;
-      margin: 0 0 31px;
-    }
-
-    .portrait-side {
-      width: 248px;
-      margin: 0;
-    }
-
-    .portrait-side img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .intro-grid .identity {
-      min-width: 0;
-      padding-top: 2px;
-    }
-
-    .intro-grid .profile-links {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 700px) {
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-        row-gap: 25px;
-        margin-bottom: 29px;
-      }
-
-      .portrait-side {
-        width: min(58vw, 235px);
-        margin: 0 auto;
-      }
-
-      .intro-grid .identity {
-        padding-top: 0;
-      }
-
-      .site {
-        width: calc(100vw - 34px);
-        padding: 34px 0 54px;
-      }
-
-      .bio {
-        font-size: 15.9px;
-      }
-    }
-  
-    .note + .note {
-      margin-top: 25px;
-    }
-
-    .note-title {
-      margin: 0;
-      font-size: 16.5px;
-      line-height: 1.47;
-      font-weight: 400;
-      letter-spacing: 0.003em;
-    }
-
-    .note-meta {
-      margin: 3px 0 0;
-      color: var(--muted);
-      font-size: 14.7px;
-      line-height: 1.43;
-      font-weight: 400;
-    }
-
-    .note-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
-      margin: 5px 0 0;
-      font-size: 14.7px;
-      line-height: 1.4;
-      font-weight: 400;
-    }
-
-    .note-links a {
-      color: var(--blue);
-    }
-
-  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
   <main class="site">
     <section class="intro-grid" aria-labelledby="name">
       <figure class="portrait-side">
-        <img src="portrait.jpg" alt="Portrait of Geonwoo Kim">
+        <img src="portrait.jpg" alt="Portrait of Geonwoo Kim" width="998" height="1000">
       </figure>
 
       <div class="identity">
@@ -387,105 +34,43 @@
           <a href="Geonwoo_Kim_CV.pdf">CV</a>
           <a href="https://scholar.google.com/scholar?q=%22Geonwoo+Kim%22+econometrics">Google Scholar</a>
           <a href="mailto:kimgeonwoo@uchicago.edu">Email</a>
-          <a href="https://github.com/killrjsdn">GitHub</a>
         </nav>
       </div>
     </section>
 
-    <section class="accordion" aria-label="Sections">
-      <div class="accordion-item">
-        <button class="accordion-button" type="button" aria-expanded="false" aria-controls="research-panel">
-          <span class="accordion-title">Research</span>
-          <span class="plus" aria-hidden="true"></span>
-        </button>
-
-        <div class="accordion-panel" id="research-panel">
-          <section class="research-group">
-            <h2 class="group-title">Working Papers</h2>
-
-            <article class="paper">
-              <p class="paper-title">Denoised Partial Correlation for Conditional Independence Tests under Noisy Confounders</p>
-              <p class="paper-authors">with Suyong Song and Jonathan Wells</p>
-              <p class="paper-status">Under revision.</p>
-              <p class="paper-links">
-                <a href="papers/denoised-partial-correlation.pdf">[Paper]</a>
-                <a href="replication/denoised-partial-correlation-replication.zip">[Replication]</a>
-              </p>
-            </article>
-
-            <article class="paper">
-              <p class="paper-title">Inference for Treatment Effects with Mismeasured High-Dimensional Controls</p>
-              <p class="paper-authors">with Suyong Song</p>
-              <p class="paper-status">Presented at Midwest Econometrics Group 2024; under revision.</p>
-              <p class="paper-links">
-                <a href="papers/highdim-me.pdf">[Paper]</a>
-                <a href="replication/highdim-me-replication.zip">[Replication]</a>
-              </p>
-            </article>
-
-            <article class="paper">
-              <p class="paper-title">Signal Space Conjugate Gradient Iterative Hard Thresholding</p>
-              <p class="paper-authors">with Kate Bartz and Jeffrey Blanchard</p>
-              <p class="paper-status">Under review.</p>
-              <p class="paper-links">
-                <a href="papers/sscgiht.pdf">[Paper]</a>
-                <a href="replication/sscgiht-replication.zip">[Replication]</a>
-              </p>
-            </article>
-          </section>
-
-          <section class="research-group">
-            <h2 class="group-title">Research in Progress</h2>
-
-            <article class="paper">
-              <p class="paper-title">Inference After AI Measurement</p>
-              <p class="paper-status">Work in progress.</p>
-              <p class="paper-links">
-                <a href="papers/ai-measurement.pdf">[Draft]</a>
-                <a href="replication/ai-measurement-replication.zip">[Replication]</a>
-              </p>
-            </article>
-          </section>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <button class="accordion-button" type="button" aria-expanded="false" aria-controls="notes-panel">
-          <span class="accordion-title">Notes</span>
-          <span class="plus" aria-hidden="true"></span>
-        </button>
-
-        <div class="accordion-panel" id="notes-panel">
-          <article class="note">
-            <p class="note-title">A Geometric View of Regularization in High-Dimensional Moment Models</p>
-            <p class="note-meta">Sample note · Research note</p>
-            <p class="note-links">
-              <a href="notes/regularization-geometry-sample.pdf">[PDF]</a>
-            </p>
+    <div class="research-sections" aria-label="Research">
+      <section class="research-section" id="working-papers" aria-labelledby="working-papers-heading">
+        <h2 class="section-heading" id="working-papers-heading">Working Papers</h2>
+        <div class="section-body">
+          <article class="paper">
+            <h3 class="paper-title"><a href="papers/denoised-partial-correlation.pdf" target="_blank" rel="noopener noreferrer">Denoised Partial Correlation for Conditional Independence Tests under Noisy Confounders</a></h3>
+            <p class="paper-authors">with Suyong Song and Jonathan Wells</p>
+            <p class="paper-status">Under revision.</p>
           </article>
 
-          <article class="note">
-            <p class="note-title">Measurement Error and Orthogonality: A Short Note</p>
-            <p class="note-meta">Sample note · Expository note</p>
-            <p class="note-links">
-              <a href="notes/measurement-error-orthogonality-sample.pdf">[PDF]</a>
-            </p>
+          <article class="paper">
+            <h3 class="paper-title"><a href="papers/highdim-me.pdf" target="_blank" rel="noopener noreferrer">Inference for Treatment Effects with Mismeasured High-Dimensional Controls</a></h3>
+            <p class="paper-authors">with Suyong Song</p>
+            <p class="paper-status">Presented at Midwest Econometrics Group 2024; under revision.</p>
+          </article>
+
+          <article class="paper">
+            <h3 class="paper-title"><a href="papers/sscgiht.pdf" target="_blank" rel="noopener noreferrer">Signal Space Conjugate Gradient Iterative Hard Thresholding</a></h3>
+            <p class="paper-authors">with Kate Bartz and Jeffrey Blanchard</p>
+            <p class="paper-status">Under review.</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="research-section" id="work-in-progress" aria-labelledby="work-in-progress-heading">
+        <h2 class="section-heading" id="work-in-progress-heading">Work in Progress</h2>
+        <div class="section-body">
+          <article class="paper">
+            <h3 class="paper-title"><a href="papers/ai-measurement.pdf" target="_blank" rel="noopener noreferrer">Inference After AI Measurement</a></h3>
+          </article>
+        </div>
+      </section>
+    </div>
   </main>
-
-  <script>
-    document.querySelectorAll('.accordion-button').forEach((button) => {
-      button.addEventListener('click', () => {
-        const panel = document.getElementById(button.getAttribute('aria-controls'));
-        const open = button.getAttribute('aria-expanded') === 'true';
-
-        button.setAttribute('aria-expanded', String(!open));
-        panel.classList.toggle('open', !open);
-      });
-    });
-  </script>
 </body>
 </html>
